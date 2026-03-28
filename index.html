@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaboratio | Staffing para Eventos en Perú</title>
+    <meta name="description" content="Collaboratio - Empresa líder en staffing para eventos en Perú. 7 años de experiencia brindando personal capacitado para conciertos, festivales y eventos corporativos.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #000000;
+            --primary-light: #1a1a1a;
+            --accent: #FFB800;
+            --accent-light: #FFC933;
+            --accent-glow: rgba(255, 184, 0, 0.15);
+            --gold: #FFB800;
+            --white: #ffffff;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-400: #94a3b8;
+            --gray-600: #475569;
+            --gray-800: #1e293b;
+            --success: #10b981;
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--gray-800);
+            line-height: 1.6;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(26, 31, 54, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 0.75rem 2rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--accent);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 14px rgba(232, 93, 4, 0.35);
+        }
+
+        .nav-cta:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            margin: 6px 0;
+            transition: all 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #3d4470 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+            top: 20%;
+            right: -10%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+            position: relative;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 14px rgba(232, 93, 4, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(232, 93, 4, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: var(--white);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .hero-stat {
+            text-align: left;
+        }
+
+        .hero-stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .hero-stat-number span {
+            color: var(--accent);
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 0.25rem;
+        }
+
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-image-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            display: block;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary));
+        }
+
+        .hero-image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(to top, rgba(26,31,54,0.95), transparent);
+        }
+
+        .hero-image-text {
+            color: var(--white);
+            font-size: 0.875rem;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: var(--white);
+            padding: 1rem 1.25rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-card-1 {
+            top: 10%;
+            right: -20px;
+            animation-delay: 0s;
+        }
+
+        .floating-card-2 {
+            bottom: 20%;
+            left: -30px;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .floating-icon.orange { background: var(--accent-glow); color: var(--accent); }
+        .floating-icon.green { background: rgba(16, 185, 129, 0.15); color: var(--success); }
+
+        .floating-text {
+            font-size: 0.8rem;
+        }
+
+        .floating-text strong {
+            display: block;
+            font-weight: 600;
+            color: var(--gray-800);
+        }
+
+        .floating-text span {
+            color: var(--gray-600);
+            font-size: 0.75rem;
+        }
+
+        /* Clients Section */
+        .clients {
+            padding: 4rem 2rem;
+            background: var(--gray-50);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .clients-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .clients-label {
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+        }
+
+        .clients-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .client-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--gray-400);
+            transition: color 0.3s;
+            cursor: default;
+        }
+
+        .client-logo:hover {
+            color: var(--primary);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--accent-glow);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .service-features {
+            margin-top: 1.25rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid var(--gray-200);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .service-feature {
+            background: var(--gray-100);
+            color: var(--gray-600);
+            padding: 0.375rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .about-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content {
+            color: var(--white);
+        }
+
+        .about-tag {
+            display: inline-block;
+            background: rgba(232, 93, 4, 0.2);
+            color: var(--accent-light);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .about-text {
+            font-size: 1.0625rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .about-value {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .about-value-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .about-value-text h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .about-value-text p {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-xl);
+            background: linear-gradient(135deg, var(--primary-light), rgba(232, 93, 4, 0.3));
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image-content {
+            text-align: center;
+            color: var(--white);
+        }
+
+        .about-image-number {
+            font-family: var(--font-display);
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 1;
+            color: var(--accent);
+        }
+
+        .about-image-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 6rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .experience-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .experience-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .experience-label {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--gray-50);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1.125rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .testimonial-info p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+        }
+
+        .contact-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-content {
+            color: var(--white);
+        }
+
+        .contact-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-text {
+            font-size: 1.0625rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .contact-method-text h4 {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-method-text a,
+        .contact-method-text p {
+            font-size: 1.0625rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-method-text a:hover {
+            color: var(--accent-light);
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: #25D366;
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.0625rem;
+            margin-top: 1.5rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-btn:hover {
+            background: #20bd5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+        }
+
+        .contact-form-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .contact-form-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.2s;
+            background: var(--gray-50);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: var(--white);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: var(--accent);
+            color: var(--white);
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form-submit:hover {
+            background: var(--accent-light);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-800);
+            padding: 4rem 2rem 2rem;
+            color: var(--white);
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-logo {
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo img {
+            height: 35px;
+            width: auto;
+        }
+
+        .footer-desc {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+
+        .footer-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+            color: var(--white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-light);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2rem;
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container,
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-image {
+                height: 350px;
+            }
+
+            .experience-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .floating-card {
+                display: none;
+            }
+
+            .about-values {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="logo"><img src="data:image/jpeg;base64,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" alt="Collaboratio"></a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#experiencia">Experiencia</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <a href="#contacto" class="nav-cta">Cotizar Ahora</a>
+            <button class="mobile-menu-btn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-glow"></div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    7 años liderando el staffing de eventos
+                </div>
+                <h1>Personal capacitado para <span>eventos</span> de alto impacto</h1>
+                <p>Somos la empresa líder en staffing para eventos en Perú. Brindamos personal altamente capacitado para conciertos, festivales, eventos corporativos y más.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">
+                        <span>Solicitar Cotización</span>
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                    </a>
+                    <a href="#servicios" class="btn btn-secondary">Ver Servicios</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">500<span>+</span></div>
+                        <div class="hero-stat-label">Eventos realizados</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">2K<span>+</span></div>
+                        <div class="hero-stat-label">Personal capacitado</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">98<span>%</span></div>
+                        <div class="hero-stat-label">Clientes satisfechos</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-image-container">
+                    <div class="hero-image"></div>
+                    <div class="hero-image-overlay">
+                        <p class="hero-image-text">📍 Lima, Perú • Cobertura nacional</p>
+                    </div>
+                </div>
+                <div class="floating-card floating-card-1">
+                    <div class="floating-icon orange">🎫</div>
+                    <div class="floating-text">
+                        <strong>+50K tickets</strong>
+                        <span>Escaneados por evento</span>
+                    </div>
+                </div>
+                <div class="floating-card floating-card-2">
+                    <div class="floating-icon green">✓</div>
+                    <div class="floating-text">
+                        <strong>100% Confiable</strong>
+                        <span>Personal verificado</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients">
+        <div class="clients-container">
+            <p class="clients-label">Confían en nosotros</p>
+            <div class="clients-grid">
+                <span class="client-logo">JOINNUS</span>
+                <span class="client-logo">TELETICKET</span>
+                <span class="client-logo">LIVE NATION</span>
+                <span class="client-logo">KANDAVU</span>
+                <span class="client-logo">MASTER LIVE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Nuestros Servicios</span>
+                <h2 class="section-title">Soluciones integrales para tu evento</h2>
+                <p class="section-subtitle">Personal capacitado y experimentado para cada área de tu evento, garantizando una experiencia impecable.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎫</div>
+                    <h3>Escaneo de Tickets</h3>
+                    <p>Personal experto en control de accesos con equipos de última tecnología para un ingreso rápido y seguro.</p>
+                    <div class="service-features">
+                        <span class="service-feature">QR & RFID</span>
+                        <span class="service-feature">Tiempo real</span>
+                        <span class="service-feature">Reportes</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💳</div>
+                    <h3>Venta de Tickets</h3>
+                    <p>Equipo comercial capacitado en puntos de venta físicos y manejo de sistemas de ticketing.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Efectivo</span>
+                        <span class="service-feature">Tarjetas</span>
+                        <span class="service-feature">Yape/Plin</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎪</div>
+                    <h3>Staff de Eventos</h3>
+                    <p>Personal de apoyo para montaje, logística, orientación al público y soporte general durante el evento.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Montaje</span>
+                        <span class="service-feature">Logística</span>
+                        <span class="service-feature">Orientación</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Cashless</h3>
+                    <p>Operadores especializados en sistemas de pago cashless, recargas y puntos de venta dentro del evento.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Recargas</span>
+                        <span class="service-feature">POS</span>
+                        <span class="service-feature">Conciliación</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🎤</div>
+                    <h3>Conciertos & Festivales</h3>
+                    <p>Experiencia en los eventos más grandes del país: Vivo x el Rock, Primavera Sound, y más.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Gran escala</span>
+                        <span class="service-feature">Multietapa</span>
+                        <span class="service-feature">24/7</span>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏢</div>
+                    <h3>Eventos Corporativos</h3>
+                    <p>Personal con protocolo empresarial para conferencias, lanzamientos y eventos privados.</p>
+                    <div class="service-features">
+                        <span class="service-feature">Protocolo</span>
+                        <span class="service-feature">Registro</span>
+                        <span class="service-feature">Networking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="about-container">
+            <div class="about-content">
+                <span class="about-tag">Sobre Nosotros</span>
+                <h2 class="about-title">Más que staffing, somos tu socio estratégico en eventos</h2>
+                <p class="about-text">Desde 2018, Collaboratio se ha consolidado como la empresa líder en staffing para eventos en Perú. Nuestra experiencia trabajando con las principales productoras y plataformas de ticketing nos permite ofrecer un servicio de excelencia.</p>
+                <p class="about-text">Contamos con un equipo de más de 2,000 colaboradores capacitados y certificados, listos para garantizar el éxito de tu evento.</p>
+                <div class="about-values">
+                    <div class="about-value">
+                        <div class="about-value-icon">🎯</div>
+                        <div class="about-value-text">
+                            <h4>Precisión</h4>
+                            <p>Cada detalle cuenta en un evento</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">⚡</div>
+                        <div class="about-value-text">
+                            <h4>Rapidez</h4>
+                            <p>Respuesta inmediata 24/7</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">🤝</div>
+                        <div class="about-value-text">
+                            <h4>Compromiso</h4>
+                            <p>Tu evento es nuestra prioridad</p>
+                        </div>
+                    </div>
+                    <div class="about-value">
+                        <div class="about-value-icon">📈</div>
+                        <div class="about-value-text">
+                            <h4>Resultados</h4>
+                            <p>Medimos y mejoramos siempre</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="about-image">
+                    <div class="about-image-content">
+                        <div class="about-image-number">7</div>
+                        <div class="about-image-text">años de experiencia</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience" id="experiencia">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Nuestra Experiencia</span>
+                <h2 class="section-title">Números que hablan por nosotros</h2>
+                <p class="section-subtitle">Resultados comprobados en los eventos más importantes del Perú.</p>
+            </div>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <div class="experience-number">500+</div>
+                    <div class="experience-label">Eventos realizados</div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-number">2M+</div>
+                    <div class="experience-label">Tickets escaneados</div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-number">2,000+</div>
+                    <div class="experience-label">Colaboradores activos</div>
+                </div>
+                <div class="experience-card">
+                    <div class="experience-number">7</div>
+                    <div class="experience-label">Años de trayectoria</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Testimonios</span>
+                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">Collaboratio ha sido fundamental en nuestros eventos más grandes. Su personal siempre llega preparado y su capacidad de respuesta ante imprevistos es excepcional.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JM</div>
+                        <div class="testimonial-info">
+                            <h4>Juan Méndez</h4>
+                            <p>Director de Operaciones, Productora</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">El nivel de profesionalismo del equipo de Collaboratio supera las expectativas. Después de 3 años trabajando juntos, son parte esencial de nuestra operación.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">CR</div>
+                        <div class="testimonial-info">
+                            <h4>Carla Rodríguez</h4>
+                            <p>Gerente de Eventos, Ticketera</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="testimonial-quote">"</span>
+                    <p class="testimonial-text">La capacitación que dan a su personal marca la diferencia. En festivales de 30,000+ personas, su equipo siempre mantiene el control y la eficiencia.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MV</div>
+                        <div class="testimonial-info">
+                            <h4>Miguel Vargas</h4>
+                            <p>Productor General, Festival</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="contact-container">
+            <div class="contact-content">
+                <h2 class="contact-title">¿Tienes un evento próximo?</h2>
+                <p class="contact-text">Conversemos sobre cómo podemos ayudarte a que tu evento sea un éxito. Respuesta en menos de 24 horas.</p>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-method-text">
+                            <h4>Email</h4>
+                            <a href="mailto:contacto@collaboratio.pe">contacto@collaboratio.pe</a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-method-text">
+                            <h4>Teléfono</h4>
+                            <a href="tel:+51999999999">+51 999 999 999</a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-method-text">
+                            <h4>Ubicación</h4>
+                            <p>Lima, Perú</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="https://wa.me/51999999999?text=Hola,%20me%20interesa%20cotizar%20personal%20para%20mi%20evento" class="whatsapp-btn" target="_blank">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Escríbenos por WhatsApp
+                </a>
+            </div>
+            <div class="contact-form-container">
+                <h3 class="contact-form-title">Solicita una cotización</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+51 999 999 999">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Tipo de servicio</label>
+                        <select id="service" name="service">
+                            <option value="">Selecciona un servicio</option>
+                            <option value="escaneo">Escaneo de tickets</option>
+                            <option value="venta">Venta de tickets</option>
+                            <option value="staff">Staff de eventos</option>
+                            <option value="cashless">Cashless</option>
+                            <option value="completo">Servicio completo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Cuéntanos sobre tu evento</label>
+                        <textarea id="message" name="message" placeholder="Fecha, lugar, cantidad de asistentes esperados..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Enviar Solicitud</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo"><img src="data:image/jpeg;base64,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" alt="Collaboratio"></div>
+                    <p class="footer-desc">Empresa líder en staffing para eventos en Perú. 7 años brindando personal capacitado para los eventos más importantes del país.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="#servicios">Escaneo de Tickets</a></li>
+                        <li><a href="#servicios">Venta de Tickets</a></li>
+                        <li><a href="#servicios">Staff de Eventos</a></li>
+                        <li><a href="#servicios">Cashless</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Empresa</h4>
+                    <ul class="footer-links">
+                        <li><a href="#nosotros">Sobre Nosotros</a></li>
+                        <li><a href="#experiencia">Experiencia</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#">Trabaja con Nosotros</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contacto@collaboratio.pe">contacto@collaboratio.pe</a></li>
+                        <li><a href="tel:+51999999999">+51 999 999 999</a></li>
+                        <li><a href="#">Lima, Perú</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Collaboratio. Todos los derechos reservados.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission (placeholder)
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
